@@ -1,5 +1,5 @@
 <?php
-$config = require './config.php';
+$config = require 'config.php';
 $token = $config['token'];
 $apiURL = "https://api.telegram.org/bot$token/";
 $adminId = $config['admin_id'];
