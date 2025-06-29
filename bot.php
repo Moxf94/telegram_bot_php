@@ -1,8 +1,5 @@
 <?php
-$config = require 'config.php';
-$token = $config['token'];
-$apiURL = "https://api.telegram.org/bot$token/";
-$adminId = $config['admin_id'];
+require_once 'config.php';
 
 $update = json_decode(file_get_contents("php://input"), true);
 file_put_contents('update_log.json', json_encode($update, JSON_PRETTY_PRINT));
