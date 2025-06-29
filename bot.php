@@ -11,11 +11,6 @@ $username = $update['message']['from']['username'] ?? 'неизвестно';
 $firstName = $update['message']['from']['first_name'] ?? '';
 $fullName = trim($firstName);
 
-$adminMessage = "📩 Новое сообщение от @$username ($fullName):\n\n$text";
-sendMessage($adminId, $adminMessage, $token);
-
-sendMessage($chatId, "Спасибо! Ваше сообщение передано мастеру 💌", $token);
-
 function sendMessage($chatId, $message, $token) {
     $url = "https://api.telegram.org/bot$token/sendMessage";
     $postData = [
@@ -46,6 +41,13 @@ function sendVideo($chatId, $videoFileId, $caption, $token) {
     file_put_contents('curl_log.txt', $output);
 
     curl_close($ch);
+}
+if ($text !== '/start' &&  !in_array($text, ['📅 Записаться', '❓ Вопрос/ответ', '📍 Как добраться', '💍 Свадебные сборы', '📸 Примеры работ', '💰 Прайс', '🎓 Обучение', '🔸 Брови']))
+{
+    $adminMessage = "📩 Новое сообщение от @$username ($fullName):\n\n$text";
+    sendMessage($adminId, $adminMessage, $token);
+
+    sendMessage($chatId, "Спасибо! Ваше сообщение передано мастеру 💌", $token);
 }
 
 if ($text === '/start') {
