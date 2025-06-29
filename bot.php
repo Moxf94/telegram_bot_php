@@ -1,7 +1,8 @@
 <?php
-$token = '8087643659:AAFgaLeU2E8tZbazOaM150DxVEX0LsE9tfg'; // вставь сюда свой токен
+$config = require './config.php';
+$token = $config['token'];
 $apiURL = "https://api.telegram.org/bot$token/";
-$adminId = 346132672;
+$adminId = $config['admin_id'];
 
 $update = json_decode(file_get_contents("php://input"), true);
 file_put_contents('update_log.json', json_encode($update, JSON_PRETTY_PRINT));
