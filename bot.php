@@ -1,6 +1,6 @@
 <?php
 $config = require 'config.php';
-$token = $config['token'];
+$token = '8087643659:AAFgaLeU2E8tZbazOaM150DxVEX0LsE9tf';
 $apiURL = "https://api.telegram.org/bot$token/";
 $adminId = $config['admin_id'];
 
