@@ -1,0 +1,23 @@
+{
+    "update_id": 148569670,
+    "message": {
+        "message_id": 112,
+        "from": {
+            "id": 346132672,
+            "is_bot": false,
+            "first_name": "Max",
+            "last_name": "Solovyov",
+            "username": "Solovyev_M",
+            "language_code": "ru"
+        },
+        "chat": {
+            "id": 346132672,
+            "first_name": "Max",
+            "last_name": "Solovyov",
+            "username": "Solovyev_M",
+            "type": "private"
+        },
+        "date": 1750964126,
+        "text": "123"
+    }
+}

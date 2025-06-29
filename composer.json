@@ -1,0 +1,5 @@
+{
+  "name": "myname/telegram-bot",
+  "description": "Simple Telegram bot on PHP",
+  "require": {}
+    }
