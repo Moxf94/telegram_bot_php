@@ -1,5 +1,8 @@
 <?php
-require_once 'config.php';
+
+$token = '8087643659:AAFgaLeU2E8tZbazOaM150DxVEX0LsE9tfg';
+$apiURL = "https://api.telegram.org/bot'.$token/";
+$adminId = 346132672;
 
 $update = json_decode(file_get_contents("php://input"), true);
 file_put_contents('update_log.json', json_encode($update, JSON_PRETTY_PRINT));
@@ -113,7 +116,7 @@ if ($text === '/start') {
         ]));
 } elseif ($text === '🔸 Брови') {
     $message = "Тут про брови че-то";
-    file_get_contents($apiURL . "sendMessage?" . http_build_query([
+    file_get_contents(Config::class->getConfig($apiURL) . "sendMessage?" . http_build_query([
             'chat_id' => $chatId,
             'text' => $message,
         ]));
